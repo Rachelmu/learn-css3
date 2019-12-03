@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>object-position/object-fit img sprites与数字翻动效果</title>
+		<style>
+		
+		dot {
+		    display: inline-block; 
+		    height: 1em;
+		    line-height: 1;
+		    text-align: left;
+		    vertical-align: -.25em;
+		    overflow: hidden;
+		}
+		dot::before {
+		    display: block;
+		    content: '...\A..\A.';
+		    white-space: pre-wrap;
+		    animation: dot 3s infinite step-start both;
+		}
+		@keyframes dot {
+		    33% { transform: translateY(-2em); }
+		    66% { transform: translateY(-1em); }
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position:relative;
+			animation:mymove 5s infinite;
+			-webkit-animation:mymove 5s infinite; 
+		}
+		@keyframes mymove{
+			0%   {top:0px;}
+			25%  {top:200px;}
+			75%  {top:50px}
+			100% {top:100px;}
+		}
+		@-webkit-keyframes mymove /* Safari and Chrome */
+		{
+		0%   {top:0px;}
+		25%  {top:200px;}
+		75%  {top:50px}
+		100% {top:100px;}
+		}
+
+		</style>
+	</head>
+	<body>
+		正在加载中<dot>...</dot>
+		<div></div>
+	</body>
+	<script>
+	</script>
+</html>
