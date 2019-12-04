@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>border效果</title>
+		<style>
+			/* border-color */
+			.box{
+				width: 200px;
+				height: 200px;
+				border: 20px solid red;
+				/* border-color: #ff0000 #00ff00 #0000ff; */
+				/* border-color: #ff0000 #00ff00 #0000ff rgb(250,0,255); */
+
+				/* border-colors支持火狐浏览器 */
+				/* -moz-border-top-colors: #a0a #909 #808 #707 #606 #505 #404 #303; */ 
+			}
+			/* border-image */
+			div
+			{
+				border:15px solid transparent;
+				width:300px;
+				padding:10px 20px;
+			}
+
+			#round
+			{
+				-moz-border-image:url(img/border.png) 30 30 round;	/* Old Firefox */
+				-webkit-border-image:url(img/border.png) 30 30 round;	/* Safari and Chrome */
+				-o-border-image:url(img/border.png) 30 30 round;		/* Opera */
+				border-image:url(img/border.png) 30 30 round;
+			}
+
+			#stretch
+			{
+				-moz-border-image:url(img/border.png) 30 30 stretch;	/* Old Firefox */
+				-webkit-border-image:url(img/border.png) 30 30 stretch;	/* Safari and Chrome */
+				-o-border-image:url(img/border.png) 30 30 stretch;	/* Opera */
+				border-image:url(img/border.png) 30 30 stretch;
+			}
+
+			#repeat
+			{
+				-moz-border-image:url(img/border.png) 30 30 repeat stretch;	/* Old Firefox */
+				-webkit-border-image:url(img/border.png) 30 30 repeat stretch;	/* Safari and Chrome */
+				-o-border-image:url(img/border.png) 30 30 repeat stretch;	/* Opera */
+				border-image:url(img/border.png) 30 30 repeat stretch;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+
+		</div>
+		<div id="round">在这里，图片铺满整个边框。</div>
+		<br>
+		<div id="stretch">在这里，图片被拉伸以填充该区域。</div>
+		<br>
+		<div id="repeat">在这里，图片水平被拉伸以填充该区域。</div>
+		<br>
+		<p>这是我们使用的图片：</p>
+		<img src="img/border.png">
+
+		<p><b>注释：</b> Internet Explorer 不支持 border-image 属性。</p>
+		<p>border-image 属性规定了用作边框的图片。</p>
+	</body>
+	<script>
+		
+	</script>
+</html>

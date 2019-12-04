@@ -78,7 +78,7 @@ border: border-width border-style border-color;
 + solid dotted dashed 上 左右 下
 + solid dotted dashed inse 上 右 下 左
 
-###border-style值
+### border-style值
 + none    无边框
 + hidden  用于表时除外，对于表，hidden用于解决边框冲突
 + dotted  点状边框
@@ -90,3 +90,23 @@ border: border-width border-style border-color;
 + inset   3D inset边框，其效果取决于border-color的值
 + outset  3D outset边框，其效果取决于border-color的值
 + inherit 应该从父元素继承边框央视。部分浏览器不支持这个属性
+
+### border-color 属性
++ border-color: [ color(颜色值) | transparent] {1,4} | inherit
+
+### border-image 属性
++ border-image: none(默认值) | image(背景图片) [ number(用来设置边框或者边框背景图片的大小) | percentage(用来设置边框或者边框背景图片的大小) ] {1,4} [/ border-width {1,4}] ? [(三个参数是用来设置边框图片的铺放方式)stretch(会拉伸边框背景图片) | repeat(会重复边框背景图片) | round(平铺边框背景图片)] {0,2}
++ Internet Explorer 不支持 border-image 属性。
++ 如果省略值，会设置其默认值
++ 详细属性方法分解（仅仅理解，并不能真分解）
+    - border-image-source   引入背景图片 
+    - border-image-slice    切割引入背景图片
+    - border-image-width    边框图片的宽度
+    - border-image-repeat   边框背景图片的排列方式
++ border-image-source: url(image url)
++ border-image-slice: [number | percentage] {1,4} && fill ?  number可以有1到4个值，可以是数值或者是百分比
++ border-image-width [length | percentage | number | auto] {1,4} 用来设置背景图片的显示大小，其实也可以理解为border-width。
++ border-image-repeat [stretch | repeat | round] {1,2}  用来制定边框背景图片的排列，其默认值为stretch。只接受两个参数，一个水平的排列方式，一个垂直排列方式。
+
+### border-radius 属性
+
