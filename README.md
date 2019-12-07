@@ -109,4 +109,36 @@ border: border-width border-style border-color;
 + border-image-repeat [stretch | repeat | round] {1,2}  用来制定边框背景图片的排列，其默认值为stretch。只接受两个参数，一个水平的排列方式，一个垂直排列方式。
 
 ### border-radius 属性
+```
+border-radius: none | <lenght> {1,4} [/<length> {1,4}] ?
+```
+- none: 默认值，表示元素没有圆角。
+- length: 由浮点数字和单位标识符组成的长度值。不可用是负值。
+- 如果要设置没有圆角，一定要设置数值为0，none无效。
+- 可拆出四个子属性,先Y轴再X轴。
+    + border-top-left-radius
+    + border-top-right-radius
+    + border-bottom-left-radius
+    + border-bottom-right-radius
+- border-radius包含两个参数值，第一个是水平圆角半径值，第二个垂直圆角半径值。
+- border-radius支持除去Webkit内核浏览器下图片的圆角，图片圆角可以放在背景图里
+- 表格圆角，当表格样式属性border-collapse是collapse时，表格不能正常显示，只有border-collapse属性值为separate时，表格圆角才能正常显示。
+- 圆形
+    + 元素的宽度和高度相同
+    + 圆角的半径值为元素宽度或宽度的一半或者直接设置圆角半径值为50%
+- 半圆
+    + 制作上半圆或下半圆，元素的宽度值是高度值的2倍，而且圆角半径值为元素的高度值
+    + 制作左半圆或右半圆，元素的高度值是宽度值的2倍，而且圆角半径值为元素的宽度值
+- 扇形
+    + 使用border-radius属性制作四分之一圆形。
+    + 遵遁“三通，一不同”，三同指元素的宽度、高度和圆角半径值相同。一不同指圆角位置不同。
+- 椭圆
+    + 元素宽度是高度的2倍，而且border-radius的水平半径等于元素宽度，垂直半径等于元素高度
+    + 垂直椭圆刚好与水平椭圆的参数相反
+
+### box-shadow属性的语法及参数
+```
+box-shadow: none | [<length> <length> <length> ? <length>? || <color>],[<length> <length> <length>? <lenght> ?|| <color>]+
+```
+
 
