@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>transform属性</title>
+		<style>
+			/* css 旋转 */
+			/* 设置动画效果 */
+			#socialicons span, #socialicons2 span{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border: 1px solid #000;
+				border-radius: 25px;
+			}
+			#socialicons span,
+			#socialicons2 span{
+				transition: all 0.8s ease-in-out;
+			}
+			/* 设置变形，顺时针旋转360度，放大1.5倍 */
+			#socialicons span:hover{
+				transform: rotate(360deg) scale(1.5);
+			}
+			/* 设置变形，逆时针旋转360度，缩小0.7倍 */
+			#socialicons2 span:hover{
+				transform: rotate(-360deg) scale(.7);
+			}
+		</style>
+	</head>
+	<body>
+		<h1>顺时针旋转360度放大1.2倍</h1>
+		<ul id="socialicons">
+			<li><a href=""><span></span></li>
+		</ul>
+		<h1>顺时针旋转360缩小0.7倍</h1>
+		<ul id="socialicons2">
+			<li><a href=""><span></span></li>
+		</ul>
+	</body>
+	<script>
+		
+	</script>
+</html>
