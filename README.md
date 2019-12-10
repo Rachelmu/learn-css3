@@ -244,3 +244,6 @@ text-overflow:clip | ellipsis
 + clip: 不显示省略标记，只是简单的裁切。
 + ellipsis: 文本溢出是显示省略标记。
 + 要实裁剪效果，还需要强制文本在一行显示（white-space:nowrap）和溢出内容隐藏（overflow:hidden）,并且需要定义容器的宽度。
+    - width: 明确给需要截取文本的容器设置宽度
+    - white-space:nowrap: 给文本容器设置强制不换行，让元素文本一行内显示
+    - overflow:hidden: 设置容器文本溢出时隐藏
