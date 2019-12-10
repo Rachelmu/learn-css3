@@ -140,5 +140,107 @@ border-radius: none | <lenght> {1,4} [/<length> {1,4}] ?
 ```
 box-shadow: none | [<length> <length> <length> ? <length>? || <color>],[<length> <length> <length>? <lenght> ?|| <color>]+
 ```
++ none:默认值，元素没有任何阴影效果
++ inset:阴影类型
++ x-offset:阴影水平偏移量
++ y-offset:阴影垂直偏移量
++ blur-radius:阴影模糊半径
++ spread-radius:阴影扩展半径
++ color:阴影颜色
 
-
+### background 属性
+#### backgroun-color 属性
+```
+background-color: transparent || <color>
+```
++ transparent：默认值，不设置任何颜色的情况下透明色。
++ color：颜色参数，颜色名，rgb，hls值，十六制值
+#### backgorund-image属性
+```
+backgroun-image: none || <url>
+```
++ none: 默认值
++ url: 背景图片的地址
+#### background-repeat属性
+```
+background-repeat: repeat || repeat-x || repeat-y || no-repeat
+```
++ repeat: 背景沿着X轴和Y轴同时平铺
++ repeat-x: 背景图沿元素的X轴平铺
++ repeat-y: 背景图沿着元素的Y轴平铺
++ no-repeat: 不进行任何平铺
+#### background-attachment属性
+```
+background-attachment: scroll || fixed
+```
++ scroll: 默认值，背景图片会随浏览器滚动条一起滚动
++ fixe: 背景图片固定不动
+#### background-position属性
+```
+background-position: <percentage> || <length> || [left|center|right] [,top|center|bottom]
+```
++ 设置元素背景图片的位置，默认值为（0,0）|| (0%,0%) || (left top)
+#### background-origin绘制图片的起点
++ 根据自己的需求改变背景图片的background-position起始位置
+```
+backgroun-origin: padding || border || conternt
+backgroun-origin: padding-box || border-box || conternt-box
+```
++ IE9+才支持的语法
++ padding-box(padding):默认值，决定background-position起始位置从padding的外边缘(border的内边缘)开始显示背景图
++ border-box(border):决定background-position起始位置从border的外边缘开始展示背景图
++ content-box(content):决定background-position起始位置从content的外边缘（padding的内边缘）开始显示背景图片
++ IE8版本background-origin的默认值为border
+#### background-clip 裁切属性
++ padding-box: 背景颜色到padding的外边缘，但不会超出边框的范围。
++ border-box: 背景图片在边框下，这个也是background-clip的默认值
++ content-box: 背景仅在内容区域绘制，不会超出padding和边框的范围
+```
+background-clip: border-box || padding-box || content-box
+```
++ Gecko内核浏览器（firefox3.6版本以前content-box不支持）,语法如下
+```
+background-clip: border || padding
+```
++ text属性：只在Webkit内核才有效，要配合Webkit内核的私有属性text-fill-color:transparent可以制作背景图片填充文本的效果。
+```
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+```
+#### background-size 背景尺寸属性
+```
+background-size: auto || <length> || <perentage> || cover || contain
+```
++ auto: 默认值。将保持背景片的原始高度和宽度。
++ length: 取具体的整数值（例如px值），将改变背景图片的大小。
++ percentage:取值为百分值。同样改变背景图片的大小，但此值是相对于元素但宽度来进行计算的，并不是根据背景图片的宽度来进行计算的
++ cover: 将背景图片放大，以适合铺满整个容器。
++ contain: 保持背景图片本身的宽高比，将背景图像缩放到宽度或高度正好适应所定义背景容器的区域。
+### background-break内联元素背景图像平铺循环方式
++ bounding-box: 背景图像在整个内联元素中进行平铺。
++ each-box: 背景图像在行内中进行平铺
++ continuous: 下一行对背景图像紧接着上一行中对图像继续平铺
+### css3多背景语法及参数
+```
+background: [background-image] | [background-position] [/background-size] | [background-repeat] | [background-attachment] | [background-clip] | [background-origin], *
+```
+### 文本属性
+#### font符合属性
+```
+font: font-style font-weight/line-height font-family;
+```
++ font-style: 字体样式
++ font-weight: 字体粗细
++ font-family: 字体类型
+#### text-shadow属性
+```
+text-shadow: none | <length> none |[shadow,]*<shadow> 或 none | <color> [,<color>]*
+text-shadow: [颜色 color] x轴位移（x-offset） y轴位移（y-offset）模糊半径（blur-radius）
+```
+#### text-overflow 溢出文本属性
+```
+text-overflow:clip | ellipsis
+```
++ clip: 不显示省略标记，只是简单的裁切。
++ ellipsis: 文本溢出是显示省略标记。
++ 要实裁剪效果，还需要强制文本在一行显示（white-space:nowrap）和溢出内容隐藏（overflow:hidden）,并且需要定义容器的宽度。
