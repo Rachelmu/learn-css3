@@ -247,3 +247,77 @@ text-overflow:clip | ellipsis
     - width: 明确给需要截取文本的容器设置宽度
     - white-space:nowrap: 给文本容器设置强制不换行，让元素文本一行内显示
     - overflow:hidden: 设置容器文本溢出时隐藏
+#### css3文本换行
+#### word-wrap属性实现长单词与URL地址的自动换行
+```
+word-wrap: normal | break-word
+```
++ normal: 默认值，浏览器只在半角空格或连字符的地方进行换行
++ break-word: 将内容在边界内换行（不截断英文单词换行）
++ word-wrap应用在pre和table中时，是没有任何效果的
+#### word-break属性来决定自动换行的处理方法
+```
+word-break: normal | break-all | keep-all
+```
++ normal: 默认值，根据语言自己的规则确定换行方式
++ break-all: 可以强行截断英文单词，达到词内换行效果。
++ keep-all: 不允许字断开（只有IE浏览器有效果）。对于中文来说，只能在半截空格或连字符或任何标点符号的地方换行，中文与中文之间不能换行。
+#### white-space属性主要用来声明建立布局过程中如何处理元素中的空白符
+```
+white-spage: normal || pre || nowrap || pre-line || pre-wrap || inherit
+```
++ normal: 默认值。空白处会被浏览器忽略。
++ pre: 文本空白处会被浏览器扣留
++ nowrap: 文本不会换行，文本会在同一行上
++ pre-line: 合并空白符序列，但保留换行符
++ pre-wrap: 保留空白符序列，但是正常进行换行
++ inherit: 继承父元素但white-space属性值，此属性值在所有的IE浏览器都不支持
+### CSS3 颜色
+#### opacity属性能够使任何元素呈现半透明效果
+```
+opacity: alphavalue || inherit
+```
++ alphavalue: 默认值为1。透明度0～1之间，1完全不透明
++ inherit: 继承父元素opacity设置的值
+### CSS3盒子模型
+#### 盒子模型：inline、inline-block、block、table、absolute position、float。
+#### box-sizing 能够事先定义盒子模型的尺寸解析方式
+```
+box-sizing: content-box | border-box | inherit
+```
++ content-box: 默认值，让元素维持W3C的标准盒模型
++ border-box: 重新定义CSS2.1中盒子模型组成模式，让元素维持IE传统的盒子模型。
++ inherit: 此值使元素继承父元素的盒模型模式
++ 只有Mozilla Gecko引擎的浏览器需要添加其私有属性
+#### css3内容溢出属性
+#### overflow-x和overflow-y,水平和垂直方向内容溢出的剪切
+```
+overflow-x: visible | hidden | scroll | auto | no-display | no-content
+overflow-y: visible | hidden | scroll | auto | no-display | no-content
+```
++ visible: 默认值，表示不剪切容器中的任何内容、不添加滚动条
++ auto: 在需要时剪切内容并添加滚动条
++ hindden: 内容溢出容器时，所有内容都将隐藏，而且不显示滚动条
++ scroll: 不管内容有咩用溢出容器，都会显示滚动条
++ no-display: 当内容溢出容器时不显示元素，此时类似于元素添加了display: none声明一样
++ no-content: 当内容溢出容器时不显示内容，此时类似于添加了visibility:hidden声明一样
+#### css3自由缩放属性
+#### resize属性主要是用来改变元素尺寸大小
+```
+resize: none | both | horizontal | vertical | inherit
+```
++ none: 用户不能拖动元素修改尺寸大小
++ both: 用户可以拖拽元素，同时修改元素的宽度和高度
++ horizontal: 用户可以拖动元素，仅可以修改元素的宽度，但不能修改元素的高度
++ vertical: 用户可以拖动元素，仅可以修改元素的高度，但不能修改元素的高度
++ inherit: 继承父元素的resize属性值
+#### css3外轮廓属性
+#### outline，主要是用来在元素周围绘制一条轮廓线，可以起到突出元素的作用。
+```
+outline: [outline-color] || [outline-style] || [outline-width] || [outline-offset] || inherit
+```
++ outline-color: 轮廓线的颜色
++ outline-style: 轮廓线的样式
++ outline-width: 轮廓线的宽度
++ outline-offset: 轮廓边框的偏移位置
++ inherit: 元素继承父元素的效果
