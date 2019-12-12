@@ -321,3 +321,59 @@ outline: [outline-color] || [outline-style] || [outline-width] || [outline-offse
 + outline-width: 轮廓线的宽度
 + outline-offset: 轮廓边框的偏移位置
 + inherit: 元素继承父元素的效果
++ 不能单独设置各边，不会影响元素盒子大小，不会影响文档流，也不会破坏网页布局
+### CSS3伸缩布局盒子模型（Flexible Box）
+### 伸缩容器display
+```
+display: flex | inline-flex
+```
++ flex: 将一个容器设置为块伸缩容器
++ inline-flex: 将一个容器设置为内联伸缩容器
+#### flex-direction 定义伸缩方向
+```
+flex-direction: row | row-reverse | column | column | column-reverse
+```
++ row（默认值）：主轴为水平方向，起点在左端。
++ row-reverse：主轴为水平方向，起点在右端。
++ column：主轴为垂直方向，起点在上沿。
++ column-reverse：主轴为垂直方向，起点在下沿。
+#### flex-wrap 属性定义，如果一条轴线排不下，如何换行。
+```
+flex-wrap: nowrap | wrap | wrap-reverse
+```
++ nowrap（默认）：不换行。
++ wrap：换行，第一行在上方。
++ wrap-reverse：换行，第一行在下方。
+#### flex-flow
++ flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。
+```
+flex-flow: <flex-direction> || <flex-wrap>;
+```
+#### justify-content 属性定义了项目在主轴上的对齐方式
+```
+justify-content: flex-start | flex-end | center | space-between | space-around
+```
++ flex-start（默认值）：左对齐
++ flex-end：右对齐
++ center： 居中
++ space-between：两端对齐，项目之间的间隔都相等。
++ space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍。
+#### align-items属性定义项目在交叉轴上如何对齐
+```
+ align-items: flex-start | flex-end | center | baseline | stretch;
+```
++ flex-start：交叉轴的起点对齐。
++ flex-end：交叉轴的终点对齐。
++ center：交叉轴的中点对齐。
++ baseline: 项目的第一行文字的基线对齐。
++ stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+#### align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+```
+align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+```
++ flex-start：与交叉轴的起点对齐。
++ flex-end：与交叉轴的终点对齐。
++ center：与交叉轴的中点对齐。
++ space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
++ space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
++ stretch（默认值）：轴线占满整个交叉轴。
