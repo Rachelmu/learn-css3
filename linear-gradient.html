@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>css3线性渐变</title>
+		<style>
+			div{
+				width: 400px;
+				height: 150px;
+				border: 1px solid #666;
+				line-height: 150px;
+				text-align: center;
+				font-weight: 900;
+				font-size: 30px;
+				color: #fff;
+				margin: 10px auto;
+			}
+			.toTop{
+				background-image: linear-gradient(to top, orange,green)
+			}
+			.toTop-deg{
+				background-image: linear-gradient(0deg,orange,green)
+			}
+			.toTop-deg2{
+				background-image: linear-gradient(360deg, orange, green)
+			}
+			.toTop-deg3{
+				background-image: linear-gradient(-360deg,orange,green)
+			}
+			.toBottom{
+				background-image: linear-gradient(to bottom,orange,green)
+			}
+			.toTopLeft{
+				background-image: linear-gradient(to top left,orange,green);
+			}
+			.toLeft{
+				background-image: linear-gradient(to left, red, orange,yellow,green,blue,indigo,violet);
+				box-shadow: 1px 10px #ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="toTop">使用关键词：top</div>
+		<div class="toTop-deg">使用关键词：toTop-deg</div>
+		<div class="toTop-deg2">使用关键词：toTop-deg2</div>
+		<div class="toTop-deg3">使用关键词：toTop-deg3</div>
+		<div class="toBottom">使用关键词：toBottom</div>
+		<div class="toTopLeft">使用关键词：toTopLeft</div>
+		<div class="toLeft">使用关键词：toLeft</div>
+	</body>
+	<script>
+		
+	</script>
+</html>

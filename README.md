@@ -377,3 +377,112 @@ align-content: flex-start | flex-end | center | space-between | space-around | s
 + space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。
 + space-around：每根轴线两侧的间隔都相等。所以，轴线之间的间隔比轴线与边框的间隔大一倍。
 + stretch（默认值）：轴线占满整个交叉轴。
+#### flex属性
+```
+flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+```
+#### flex-grow 属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。
+```
+flex-grow: <number>; /* default 0 */
+```
++ 如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+#### flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小。
+```
+flex-shrink: <number>; /* default 1 */
+```
++ 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
++ 负值对该属性无效。
+#### flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。
+```
+flex-basis: <length> | auto; /* default auto */
+```
+#### order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0。
+```
+order: <integer>;
+```
+### CSS3多列布局
+#### columns属性
++ columns: 集成column-width和column-count两个属性，用于实现元素多列布局的效果
++ column-width: 定义每列列宽度
++ column-count: 定义分列列数
++ column-gap: 定义列间距
++ column-rule: 定义列边框
++ column-span: 定义多布布局中子元素跨列效果
++ column-fill: 控制每列的列高效果
+### CSS3渐变
+#### css3线性渐变 （Linear Gradients）
+```
+linear-gradient([[<angle> | to <side-or-corner>],]? <color-stop>[,<color-stop>]+)
+```
++ angle: 通过角度来确定渐变的方向
++ side: 通过关键词来确定渐变的方向
+### CSSS3径向渐变
+```
+radial-gradient([[<shape> || <size>] [at <position>] ?, | at <position>,]? <color-stop>[,<color-stop>]+)
+```
++ shape: 主要定义径向渐变的形状
+    - circle: 如果size和length大小相等，径向渐变是一个圆形，也就是用来指定圆形的径向渐变
+    - ellipse: 如果size和lenght大小不想等，径向渐变是一个椭圆形，也就是用来指定椭圆形的径向渐变
++ size: 用来确定径向渐变的结束形状大小
+    - closest-side: 指定径向渐变的半径长度为从圆心到离圆心最近的边。
+    - closest-corner: 指定径向渐变的半径长度为从圆心到离圆心最近的角。
+    - farthest-side: 指定径向渐变的半径长度为从圆心到离圆心最远的边。
+    - farthest-corner: 指定径向渐变的半径长度为从圆心到离圆心最远的角。
++ position: 主要来定义径向渐变的圆心位置
+    - lenght: 用长度指定径向渐变圆心的横坐标或纵坐标，可以为负数
+    - percentage: 用百分比指定径向渐变圆心的横坐标或纵坐标，可以为负数
+    - left: 设置左边为径向渐变圆心的横坐标
+    - center: 设置中心为径向渐变圆心的横坐标值或纵坐标
+    - right: 设置右边为径向渐变圆心的横坐标值
+    - top: 设置顶部为径向渐变圆心的纵坐标值
+    - bottom: 设置底部为径向渐变圆心的纵坐标值
++ color-stop:径向渐变线上的停止颜色
+#### css3重复渐变
++ repeating-linear-gradient
++ repeating-radial-gradient
+### CSS3变形
+#### transform 属性让元素在一个坐标系统中变形，包含一系列变形的函数，可以移动、旋转和缩放元素。
+```
+transform: none | <transform-function> [<transform-function>]*
+```
+#### transform-function 变形函数
++ none	定义不进行转换。
++ matrix(n,n,n,n,n,n): 定义 2D 转换，使用六个值的矩阵。
++ matrix3d(n,n,n,n,n,n,n,n,n,n,n,n,n,n,n,n): 定义 3D 转换，使用 16 个值的 4x4 矩阵。
++ translate(x,y): 定义 2D 转换。
++ translate3d(x,y,z): 定义 3D 转换。
++ translateX(x): 定义转换，只是用 X 轴的值。
++ translateY(y): 定义转换，只是用 Y 轴的值。
++ translateZ(z): 定义 3D 转换，只是用 Z 轴的值。
++ scale(x,y): 定义 2D 缩放转换。
++ scale3d(x,y,z): 定义 3D 缩放转换。
++ scaleX(x): 通过设置 X 轴的值来定义缩放转换。
++ scaleY(y): 通过设置 Y 轴的值来定义缩放转换。
++ scaleZ(z): 通过设置 Z 轴的值来定义 3D 缩放转换。
++ rotate(angle): 定义 2D 旋转，在参数中规定角度。
++ rotate3d(x,y,z,angle): 定义 3D 旋转。
++ rotateX(angle): 定义沿着 X 轴的 3D 旋转。
++ rotateY(angle): 定义沿着 Y 轴的 3D 旋转。
++ rotateZ(angle): 定义沿着 Z 轴的 3D 旋转。
++ skew(x-angle,y-angle): 定义沿着 X 和 Y 轴的 2D 倾斜转换。
++ skewX(angle): 定义沿着 X 轴的 2D 倾斜转换。
++ skewY(angle): 定义沿着 Y 轴的 2D 倾斜转换。
++ perspective(n): 为 3D 转换元素定义透视视图。
+#### transform-origin 属性用来指定元素的中心点位置
+```
+transform-origin: x-axis y-axis z-axis;
+```
++ x-axis: 定义视图被置于 X 轴的何处。可能的值：
+    - left
+    - center
+    - right
+    - length
+    - %
++ y-axis: 定义视图被置于 Y 轴的何处。可能的值：
+    - top
+    - center
+    - bottom
+    - length
+    - %
++ z-axis: 定义视图被置于 Z 轴的何处。可能的值：
+    - length
