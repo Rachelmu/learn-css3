@@ -454,17 +454,17 @@ transform: none | <transform-function> [<transform-function>]*
 + translateX(x): 定义转换，只是用 X 轴的值。
 + translateY(y): 定义转换，只是用 Y 轴的值。
 + translateZ(z): 定义 3D 转换，只是用 Z 轴的值。
-+ scale(x,y): 定义 2D 缩放转换。
++ scale(x,y): 定义 2D 缩放转换。【缩放】
 + scale3d(x,y,z): 定义 3D 缩放转换。
 + scaleX(x): 通过设置 X 轴的值来定义缩放转换。
 + scaleY(y): 通过设置 Y 轴的值来定义缩放转换。
 + scaleZ(z): 通过设置 Z 轴的值来定义 3D 缩放转换。
-+ rotate(angle): 定义 2D 旋转，在参数中规定角度。
++ rotate(angle): 定义 2D 旋转，在参数中规定角度。【旋转】
 + rotate3d(x,y,z,angle): 定义 3D 旋转。
 + rotateX(angle): 定义沿着 X 轴的 3D 旋转。
 + rotateY(angle): 定义沿着 Y 轴的 3D 旋转。
 + rotateZ(angle): 定义沿着 Z 轴的 3D 旋转。
-+ skew(x-angle,y-angle): 定义沿着 X 和 Y 轴的 2D 倾斜转换。
++ skew(x-angle,y-angle): 定义沿着 X 和 Y 轴的 2D 倾斜转换。【倾斜】
 + skewX(angle): 定义沿着 X 轴的 2D 倾斜转换。
 + skewY(angle): 定义沿着 Y 轴的 2D 倾斜转换。
 + perspective(n): 为 3D 转换元素定义透视视图。
@@ -486,3 +486,70 @@ transform-origin: x-axis y-axis z-axis;
     - %
 + z-axis: 定义视图被置于 Z 轴的何处。可能的值：
     - length
+#### transform-style 属性指定嵌套元素如何在3D空间中呈现
+```
+transform-style: flat|preserve-3d;
+```
++ flat:子元素将不保留其 3D 位置。
++ preserve-3d:子元素将保留其 3D 位置。
+#### perspective 设置元素被查看位置的视图
+#### 用在舞台元素上（变形元素们的共同父元素）
+#### perspective() 用在当前变形元素上
+```
+perspective: number|none;
+```
++ number: 元素距离视图的距离，以像素计。
++ none: 默认值。与 0 相同。不设置透视。
+####  perspective-origin 属性设置3D元素的基点位置
+```
+perspective-origin: x-axis y-axis;
+```
++ axis: 定义该视图在 x 轴上的位置。默认值：50%。可能的值：
+    - left: 在包含框的X轴方向长度的0%
+    - center: 中间点
+    - right: 长度的100%
+    - length
+    - %
++ y-axis: 定义该视图在 y 轴上的位置。默认值：50%。可能的值：
+    - top: 在包含框的Y轴方向长度的0%
+    - center: 中间点
+    - bottom: 长度的100%
+    - length
+    - %
+#### backface-visibility 属性决定怨元素旋转背面是否可见
+```
+backface-visibility: visible|hidden;
+```
++ visible: 背面是可见的。
++ hidden: 背面是不可见的。
+### CSS3过渡
+#### transition 属性是一个简写属性，用于设置四个过渡属性 
+```
+transition: property duration timing-function delay;
+```
++ transition-property: 规定设置过渡效果的 CSS 属性的名称。
++ transition-duration: 规定完成过渡效果需要多少秒或毫秒。
++ transition-timing-function: 规定速度效果的速度曲线。
++ transition-delay: 定义过渡效果何时开始。
+
+### CSS3动画
+#### keyframes 关键帧，关键帧声明一个动画
+```
+@keyframes animationname {keyframes-selector {css-styles;}}
+```
++ animationname: 必需。定义动画的名称。
++ keyframes-selector: 必需。动画时长的百分比（必须是百分比）。合法的值：
+    - 0-100%
+    - from（与 0% 相同）
+    - to（与 100% 相同）
++ css-styles: 必需。一个或多个合法的 CSS 样式属性。
+#### animation属性是一个简写属性，用于设置六个动画属性
+```
+animation: name duration timing-function delay iteration-count direction;
+```
++ animation-name: 规定需要绑定到选择器的 keyframe 名称。。
++ animation-duration: 规定完成动画所花费的时间，以秒或毫秒计。
++ animation-timing-function: 规定动画的速度曲线。
++ animation-delay: 规定在动画开始之前的延迟。
++ animation-iteration-count: 规定动画应该播放的次数。
++ animation-direction: 规定是否应该轮流反向播放动画。
